@@ -15,3 +15,9 @@
     If we doesn't use the action prop, the default behaviour of the browser will be used,the default behaviour is that it defines the URL to which the data will be submited once we press the submit button.
 
     If we pass the function to the "action" props than on submit button click this function will be triggered.
+
+    To make server action we have to add 'use server' directive into the function.
+
+    Server actions only gets executed on the server.
+
+    Once the form is submited it will behind the scenes send a request and triggers this function for us automatically.

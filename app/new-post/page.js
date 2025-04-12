@@ -3,14 +3,24 @@ import { storePost } from "@/lib/posts";
 export default function NewPostPage() {
   // ################ Form action ################
   async function createPost(formData) {
+    "use server"; // To make server action we have to add 'use server' directive
     const title = formData.get("title"); // .get(name_attribute_value)
     const image = formData.get("image");
     const content = formData.get("content");
+    console.log(title, content);
 
     // fetch() : Send data to server
     // #### After this we have to maanually send the request from the client side to some backend api to save the data ###
 
     // ################ Form action  /* Ends */ ################
+
+    // ############### Storing data in database ################
+    storePost({
+      imageUrl: "",
+      title: title,
+      content: content,
+      userId: 1,
+    });
   }
 
   return (
