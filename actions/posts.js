@@ -55,7 +55,7 @@ export async function createPost(prevState, formData) {
     content: content,
     userId: 1,
   });
-
+  revalidatePath("/", "layout");
   // ### redirecting user to other page after saving data ###
   redirect("/feed");
 }
