@@ -5,7 +5,7 @@ export default function FormSubmit() {
   const status = useFormStatus();
   console.log(status);
   if (status.pending) {
-    return <p>Ceating post...</p>;
+    return <p>Creating post...</p>;
   }
   return (
     <>
