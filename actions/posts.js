@@ -1,6 +1,6 @@
 "use server";
 import { uploadImage } from "@/lib/cloudinary";
-import { storePost } from "@/lib/posts";
+import { storePost, updatePostLikeStatus } from "@/lib/posts";
 import { redirect } from "next/navigation";
 
 export async function createPost(prevState, formData) {
@@ -57,4 +57,8 @@ export async function createPost(prevState, formData) {
 
   // ### redirecting user to other page after saving data ###
   redirect("/feed");
+}
+
+export async function togglePostLikeStatus(postId) {
+  updatePostLikeStatus(postId, 2);
 }

@@ -21,3 +21,16 @@
     Server actions only gets executed on the server.
 
     Once the form is submited it will behind the scenes send a request and triggers this function for us automatically.
+
+
+    <form action={togglePostLikeStatus.bind(null, post.id)}>
+        <LikeButton />
+    </form>
+
+    togglePostLikeStatus.bind(nulll, post.id) : a way of pre-configuring which data will be passed to the function when it will execute in the future by react
+
+    1st what this key word points to, 2nd the first arg to the function.
+
+    We can also pass "formAction" attribute directly to the button element.
+
+    <button className="like-button" formAction={togglePostLikeStatus}>
